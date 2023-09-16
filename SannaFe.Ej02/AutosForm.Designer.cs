@@ -28,27 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
+            marcaCombo = new ComboBox();
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            modeloText = new TextBox();
+            añoText = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            precioText = new TextBox();
             label4 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            aceptarBtn = new Button();
+            cancelarBtn = new Button();
+            UsuarioText = new Label();
+            FechaText = new Label();
+            UsuarioTex = new Label();
             SuspendLayout();
             // 
-            // comboBox1
+            // marcaCombo
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Ford\t", "Fiat ", "Chevrolet", "Audi" });
-            comboBox1.Location = new Point(48, 62);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(201, 28);
-            comboBox1.TabIndex = 0;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            marcaCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+            marcaCombo.FormattingEnabled = true;
+            marcaCombo.Items.AddRange(new object[] { "Ford\t", "Fiat ", "Chevrolet", "Audi" });
+            marcaCombo.Location = new Point(48, 62);
+            marcaCombo.Name = "marcaCombo";
+            marcaCombo.Size = new Size(201, 28);
+            marcaCombo.TabIndex = 0;
+            marcaCombo.SelectedIndexChanged += MarcacomboBox1_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -70,21 +74,21 @@
             label2.Text = "Modelo\r\n";
             label2.Click += label2_Click;
             // 
-            // textBox1
+            // modeloText
             // 
-            textBox1.Location = new Point(255, 63);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 3;
-            textBox1.TextChanged += textBox1_TextChanged;
+            modeloText.Location = new Point(255, 63);
+            modeloText.Name = "modeloText";
+            modeloText.Size = new Size(125, 27);
+            modeloText.TabIndex = 3;
+            modeloText.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // añoText
             // 
-            textBox2.Location = new Point(386, 63);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 5;
-            textBox2.TextChanged += textBox2_TextChanged;
+            añoText.Location = new Point(386, 63);
+            añoText.Name = "añoText";
+            añoText.Size = new Size(125, 27);
+            añoText.TabIndex = 5;
+            añoText.TextChanged += textBox2_TextChanged;
             // 
             // label3
             // 
@@ -96,13 +100,13 @@
             label3.Text = "Año\r\n\r\n";
             label3.Click += label3_Click;
             // 
-            // textBox3
+            // precioText
             // 
-            textBox3.Location = new Point(517, 63);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 7;
-            textBox3.TextChanged += textBox3_TextChanged;
+            precioText.Location = new Point(517, 63);
+            precioText.Name = "precioText";
+            precioText.Size = new Size(125, 27);
+            precioText.TabIndex = 7;
+            precioText.TextChanged += textBox3_TextChanged;
             // 
             // label4
             // 
@@ -114,41 +118,71 @@
             label4.Text = "Precio";
             label4.Click += label4_Click;
             // 
-            // button1
+            // aceptarBtn
             // 
-            button1.Location = new Point(448, 146);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 8;
-            button1.Text = "Aceptar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            aceptarBtn.Location = new Point(448, 146);
+            aceptarBtn.Name = "aceptarBtn";
+            aceptarBtn.Size = new Size(94, 29);
+            aceptarBtn.TabIndex = 8;
+            aceptarBtn.Text = "Aceptar";
+            aceptarBtn.UseVisualStyleBackColor = true;
+            aceptarBtn.Click += button1_Click;
             // 
-            // button2
+            // cancelarBtn
             // 
-            button2.Location = new Point(548, 146);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 9;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            cancelarBtn.Location = new Point(548, 146);
+            cancelarBtn.Name = "cancelarBtn";
+            cancelarBtn.Size = new Size(94, 29);
+            cancelarBtn.TabIndex = 9;
+            cancelarBtn.Text = "Cancelar";
+            cancelarBtn.UseVisualStyleBackColor = true;
+            cancelarBtn.Click += button2_Click;
+            // 
+            // UsuarioText
+            // 
+            UsuarioText.AutoSize = true;
+            UsuarioText.Location = new Point(12, 9);
+            UsuarioText.Name = "UsuarioText";
+            UsuarioText.Size = new Size(0, 20);
+            UsuarioText.TabIndex = 10;
+            // 
+            // FechaText
+            // 
+            FechaText.Location = new Point(496, 9);
+            FechaText.Name = "FechaText";
+            FechaText.Size = new Size(177, 20);
+            FechaText.TabIndex = 11;
+            FechaText.Text = "Fecha";
+            FechaText.TextAlign = ContentAlignment.TopRight;
+            FechaText.Click += label6_Click;
+            // 
+            // UsuarioTex
+            // 
+            UsuarioTex.AutoSize = true;
+            UsuarioTex.Location = new Point(18, 9);
+            UsuarioTex.Name = "UsuarioTex";
+            UsuarioTex.Size = new Size(124, 20);
+            UsuarioTex.TabIndex = 12;
+            UsuarioTex.Text = "[NombreUsuario]";
             // 
             // AutosForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(682, 218);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox3);
+            Controls.Add(UsuarioTex);
+            Controls.Add(FechaText);
+            Controls.Add(UsuarioText);
+            Controls.Add(cancelarBtn);
+            Controls.Add(aceptarBtn);
+            Controls.Add(precioText);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(añoText);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(modeloText);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(marcaCombo);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "AutosForm";
             Text = "Ejercicio 2";
@@ -159,15 +193,18 @@
 
         #endregion
 
-        private ComboBox comboBox1;
+        private ComboBox marcaCombo;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox modeloText;
+        private TextBox añoText;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox precioText;
         private Label label4;
-        private Button button1;
-        private Button button2;
+        private Button aceptarBtn;
+        private Button cancelarBtn;
+        private Label UsuarioText;
+        private Label FechaText;
+        private Label UsuarioTex;
     }
 }
